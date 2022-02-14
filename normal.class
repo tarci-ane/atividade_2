@@ -1,0 +1,21 @@
+package atividade;
+
+import javax.swing.JOptionPane;
+
+public class normal extends ingresso {
+
+public normal() {
+		
+}
+
+	public normal(double valor) {
+		super(valor);
+		
+	}
+
+public void imprime () {
+	JOptionPane.showMessageDialog(null, "ingresso normal:\n" + 
+			"valor: R$" + this.getValor());
+
+		}
+ }
