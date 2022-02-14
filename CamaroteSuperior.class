@@ -1,0 +1,27 @@
+package atividade;
+
+import javax.swing.JOptionPane;
+
+public class CamaroteSuperior extends VIP{
+
+	
+	public CamaroteSuperior() {
+		
+	}
+
+	public CamaroteSuperior(double valor) {
+		super(valor);
+		
+	}
+
+	public double calcularvalor() {
+		return this.getValor() * 1.5;
+		
+	}
+	
+	public void imprime () {
+		JOptionPane.showMessageDialog(null, "Camarote Inferior:\n" 
+				+ "valor:R$" + calcularvalor());
+	}
+}
+
