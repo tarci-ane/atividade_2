@@ -1,0 +1,55 @@
+package atividade;
+
+import javax.swing.JOptionPane;
+
+public class Principal extends ingresso {
+public static void main (String[] args) {
+	double valor;
+	String localizacao;
+	int op;
+	
+	valor = Double.parseDouble(JOptionPane.showInputDialog("qual o valor do ingresso?"));
+	
+	for(;;) {
+		op = Integer.parseInt(JOptionPane.showInputDialog("qual é o ingresso desejado?\n"
+				+ "1 - Ingresso Normal\n"
+				+ "2 - Ingresso VIP \n"
+				+ "3 - Camarote Inferior \n"
+				+ "4 - Camarote Superior \n"
+				+ "5 - Sair"));
+		
+		if (op==1) {
+			normal no = new normal(valor);
+			
+			no.imprime();
+			
+		}else if (op==2) {
+			VIP vi = new VIP(valor);
+			
+			vi.imprime();
+		
+		}else if(op==3) {
+			localizacao = String.valueOf(JOptionPane.showInputDialog(null, "qual a localização do camarote inferior?\n"));
+			
+			CamaroteInferior ci = new CamaroteInferior(localizacao, valor);
+			
+			ci.imprime();
+			
+		}else if(op==4) {
+			
+			CamaroteSuperior cs = new CamaroteSuperior (valor);
+			
+			cs.imprime();
+			
+		}else if(op==5) {
+					JOptionPane.showMessageDialog(null, "finalizando");
+					break;
+		}else {
+			JOptionPane.showMessageDialog(null, "opção invalida");
+		}
+		
+	}
+	
+	
+}
+}
